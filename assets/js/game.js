@@ -10,24 +10,14 @@ var enemyNames = ["Roborto" , "Amy Android" , "Robo Trumble"];
 var enemyHealth = 50;
 var enemyAttack = 12;
 
-// console.log(enemyNames);
-// console.log(enemyNames[0]);
-// console.log(enemyNames[1]);
-// console.log(enemyNames[2]);
-// console.log(enemyNames.length);
-// for(var i = 0; i < enemyNames.length; i++){
-//     console.log(enemyNames[i]);
-//     console.log(i);
-//     console.log(enemyNames[i] + " is at " + i + " index");
-// }
+    // // Alert players that they are starting the round
+    // window.alert("Welcome to Robot Gladiators!");
 
 var fight = function(enemyName) {
     while(playerHealth > 0 && enemyHealth > 0) {
     // Ask players to fight or skip fight
     var promptFight = window.prompt("Would you like to FIGHT or SKIP this battle? Enter 'FIGHT' or 'SKIP' to choose.");
 
-    // Alert players that they are startin the round
-    window.alert("Welcome to Robot Gladiators!");
     // Repeat and execute while the enemy-robot is alive
         // if player choses to skip confirm and then stop loop
         if (promptFight === "skip" || promptFight === "SKIP") {
@@ -79,10 +69,28 @@ var fight = function(enemyName) {
 };
 
 for(var i = 0; i < enemyNames.length; i++) {
+    if (playerHealth > 0) {
+        window.alert("Welcome to Robot Gladiators! Round " + (i + 1));
     var pickedEnemyName = enemyNames[i];
     enemyHealth = 50;
     fight(pickedEnemyName);
+    }
+    else {
+        window.alert("You have lost your robot in battle! Game Over!");
+        break;
+    }
 }
+
+// console.log(enemyNames);
+// console.log(enemyNames[0]);
+// console.log(enemyNames[1]);
+// console.log(enemyNames[2]);
+// console.log(enemyNames.length);
+// for(var i = 0; i < enemyNames.length; i++){
+//     console.log(enemyNames[i]);
+//     console.log(i);
+//     console.log(enemyNames[i] + " is at " + i + " index");
+// }
     
 //         // place fight function () code block here...
     
